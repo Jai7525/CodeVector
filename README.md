@@ -16,22 +16,27 @@ FastAPI + MySQL product browser demonstrating stable cursor pagination over 200,
 ## Project Structure
 
 ```text
-app/
-  api/
-    cursor.py
-    router.py
-    routes/
-      health.py
-      products.py
-  core/
-    config.py
-  db/
-    base.py
-    session.py
-  models/
-    product.py
-  schemas/
-    product.py
+backend/
+  app/
+    api/
+      cursor.py
+      router.py
+      routes/
+        health.py
+        products.py
+    core/
+      config.py
+    db/
+      base.py
+      session.py
+    models/
+      product.py
+    schemas/
+      product.py
+  scripts/
+    seed_products.py
+  .env.example
+  requirements.txt
 frontend/
   src/
     main.jsx
@@ -39,15 +44,12 @@ frontend/
   index.html
   package.json
   package-lock.json
-scripts/
-  seed_products.py
-.env.example
-requirements.txt
 ```
 
 ## Backend Setup
 
 ```powershell
+cd backend
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
@@ -64,12 +66,14 @@ http://127.0.0.1:8000/health
 ## Seed Data
 
 ```powershell
+cd backend
 python -m scripts.seed_products --reset
 ```
 
 For a smaller test:
 
 ```powershell
+cd backend
 python -m scripts.seed_products --total 1000 --batch-size 500 --reset
 ```
 
