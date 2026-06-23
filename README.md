@@ -18,7 +18,7 @@ Backend
 
 GitHub Repository
 
-[YOUR_GITHUB_REPO_URL]
+[https://github.com/Jai7525/CodeVector]
 
 ---
 
