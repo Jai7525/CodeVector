@@ -8,6 +8,10 @@ from app.core.config import settings
 
 engine = create_engine(
     settings.database_url,
+    connect_args={
+        "ssl_verify_cert": True,
+        "ssl_verify_identity": True,
+    },
     pool_pre_ping=True,
 )
 
